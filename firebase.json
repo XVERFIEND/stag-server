@@ -1,0 +1,29 @@
+{
+    "hosting": {
+        "headers": [ {
+            "source" : "**",
+            "headers" : [ {
+             "key" : "Access-Control-Allow-Origin",
+              "value" : "*"
+        } ]
+        }],
+        "public": "public",
+        "rewrites": [
+            { "source": "**", "function": "app" },
+            { "source": "/api/users/", "function": "users.findAll" },
+            { "source": "/api/users/:id", "function": "users.findOne" },
+            { "source": "/api/users/update/:id", "function": "users.update" },
+            { "source": "/api/achieves/", "function": "achieves.findAll" },
+            { "source": "/api/achieves/:id", "function": "achieves.findOne" },
+            { "source": "/api/achieves/update/:id", "function": "achieves.update" }
+        ],
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ]
+    },
+    "functions": {
+        "runtime": "nodejs16"
+    }
+}
