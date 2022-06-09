@@ -7,9 +7,8 @@
               "value" : "*"
         } ]
         }],
-        "public": "public",
+        "public": "StagServer",
         "rewrites": [
-            { "source": "**", "function": "app" },
             { "source": "/api/users/", "function": "users.findAll" },
             { "source": "/api/users/:id", "function": "users.findOne" },
             { "source": "/api/users/update/:id", "function": "users.update" },
